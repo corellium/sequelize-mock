@@ -399,7 +399,7 @@ Sequelize.prototype.transaction = function (options, autoCallback) {
 	}
 	return new bluebird(function (resolve, reject) {
 		// TODO Return mock transaction object
-		return autoCallback({}).then(resolve, reject);
+		return autoCallback({ LOCK: {} }).then(resolve, reject);
 	});
 };
 
